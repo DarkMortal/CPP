@@ -13,3 +13,12 @@ int main(){
    for(string name: Names) cout<<name<<endl;
    return 0;
 }
+
+/*Output
+121 100 81 64 49 36 25 16 9 4
+
+Dipanjan Biswas
+Rishav Gupta
+Saptarshi Dey
+Swagatam Burai
+*/

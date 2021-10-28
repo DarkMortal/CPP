@@ -72,3 +72,21 @@ int main(){
     cout<<Result(d,NiceHash)<<endl;
     return 0;
 }
+
+/*Output
+Hello from Base 0  0
+Hello from Derived
+Disp of Derived Class
+Hello from Base 0  0
+Base is being typecasted into Overloaded
+This is overloaded class
+6  7
+1  12
+Hello from Base 7  5
+Hello from Derived
+Hello from Base 0  0
+
+Copy Constructor is Called
+10  3
+-8
+*/

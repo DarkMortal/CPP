@@ -27,5 +27,5 @@ int main(){
 	int size=factorial(n,x);
 	cout<<"\nThe facorial is=";
 	for(int i=size;i!=0;i--) cout<<x[i-1];
-	return 0;
+	cout<<endl; return 0;
 }
