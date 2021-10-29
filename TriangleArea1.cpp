@@ -18,7 +18,7 @@ int main(){
     for(int i=0;i<3;i++){
         for(int j=0;j<2;j++) std::cin>>matrix[i][j];
         matrix[i][2]=1;
-    }
+    } 
     std::cout<<std::endl<<"Area of the Triangle = "<<DET(matrix)/2<<" sq. units"<<std::endl;
     return 0;
 }
