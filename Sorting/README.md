@@ -1,20 +1,5 @@
-# C++ Revision Files
-  ## [Watch this video about Structure Padding in C++](https://youtu.be/aROgtACPjjg)
-  ## [Watch this video about Header Guards](https://youtu.be/wRq8pxJEpfc)
-  ## [Watch this video about Array decay](https://youtu.be/hsUivWegqYU)
-
-   ### 1. Order of passing arguments to a function matters a lot <br>
-   We can't pass any non-default parameters after a default parameter in C and C++
-   > WRONG <br>
- ```
- void arr(int a=10,int b)
- ```
-   > CORRECT <br>
- ```
- void arr(int a=10,int b=0)
-```
-<p align="center">OR</p>
-
-```
-void arr(int b,int a=10)
-```
+# C++ Sorting Files
+  ## [Ouick Sort](https://youtu.be/SN4x87ZdhGg)
+  ## [Quick Sort Analysis](https://youtu.be/xqdTr7xs8QU)
+  <br>
+  ## [Merge Sort](https://youtu.be/6Aqxv29RGPc)
