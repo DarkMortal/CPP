@@ -18,3 +18,4 @@
 ```
 void arr(int b,int a=10)
 ```
+## [Sieve of Eratosthenes](https://youtu.be/nDPo9hsDNvU)
