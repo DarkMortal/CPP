@@ -2,19 +2,17 @@
 #define SORTING_H_INCLUDED
 
 namespace Quick_SORT{
-    template <class X>
-    void Swap(X &a,X &b){ a+=b; b=a-b; a-=b; }
     namespace ASCENDING{
         template <class X>
         int DIVIDE(X* arr,int index,int len){
             int LOW=index+1;
             int HIGH=len;
             do{
-                while(arr[LOW]<=arr[index]) LOW++;
+                while(arr[LOW]<arr[index] || arr[LOW]==arr[index]) LOW++;
                 while(arr[HIGH]>arr[index]) HIGH--;
-                if(LOW<HIGH) Swap(arr[LOW],arr[HIGH]);
+                if(LOW<HIGH) swap(arr[LOW],arr[HIGH]);
             }while(LOW<HIGH);
-            if(index!=HIGH) Swap(arr[index],arr[HIGH]);
+            if(index!=HIGH) swap(arr[index],arr[HIGH]);
             return HIGH;
         }
         template <class X>
@@ -33,11 +31,11 @@ namespace Quick_SORT{
             int LOW=len;
             int HIGH=index+1;
             do{
-                while(arr[LOW]<=arr[index]) LOW--;
-                while(arr[HIGH]>arr[index]) HIGH++;
-                if(LOW>HIGH) Swap(arr[LOW],arr[HIGH]);
+                while(arr[LOW]<arr[index]) LOW--;
+                while(arr[HIGH]>arr[index] || arr[HIGH]==arr[index]) HIGH++;
+                if(LOW>HIGH) swap(arr[LOW],arr[HIGH]);
             }while(LOW>HIGH);
-            if(index!=LOW) Swap(arr[index],arr[LOW]);
+            if(index!=LOW) swap(arr[index],arr[LOW]);
             return LOW;
         }
         template <class X>
@@ -45,8 +43,8 @@ namespace Quick_SORT{
             int p_index=0;
             if(START<END){
                 p_index=DIVIDE(arr,START,END);
+                SORT(arr,START,p_index-1);
                 SORT(arr,p_index+1,END);
-                SORT(arr,START+1,p_index-1);
             }
         }
     }
@@ -57,7 +55,7 @@ namespace Merge_SORT{
         template <class X>
         void MERGE(X* a,int mid,int low,int high){
             int i=low,j=mid+1,k=low;
-            X c[high-low+1];
+            X c[100];
             while(i<=mid && j<=high){
                 if(a[i]<a[j]){
                     c[k]=a[i];
@@ -91,10 +89,10 @@ namespace Merge_SORT{
         }
     }
     namespace DESCENDING{
-        template <typename X>
+        template <class X>
         void MERGE(X* a,int mid,int low,int high){
             int i=low,j=mid+1,k=low;
-            X c[high-low+1];
+            X c[100];
             while(i<=mid && j<=high){
                 if(a[i]>a[j]){
                     c[k]=a[i];
@@ -116,7 +114,7 @@ namespace Merge_SORT{
             for(i=low;i<=high;i++) a[i]=c[i];
         }
 
-        template <typename X>
+        template <class X>
         void SORT(X* A,int low,int high){
             int mid;
             if(low<high){
