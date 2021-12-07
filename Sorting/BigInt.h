@@ -33,8 +33,14 @@ BigInt BigInt::operator+(const BigInt &a){
 BigInt BigInt::operator-(const BigInt &a){
     if(isneg==a.isneg){
         bool neg=false;
-        if(mag.length()!=a.mag.length()) neg=(mag.length()>a.mag.length() && isneg);
-        else neg=(mag>a.mag && isneg);
+        if(isneg){
+           if(mag.length()!=a.mag.length()) neg=(mag.length()>a.mag.length());
+           else neg=(mag>a.mag);
+        }
+        else{
+           if(mag.length()!=a.mag.length()) neg=(mag.length()<a.mag.length());
+           else neg=(mag<a.mag);
+        }
         return BigInt((neg)?("-"+MINUS(mag,a.mag)):(MINUS(mag,a.mag)));
     }
     else return BigInt((isneg)?("-"+ADD(mag,a.mag)):(ADD(mag,a.mag)));
