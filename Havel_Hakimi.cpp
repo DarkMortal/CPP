@@ -21,7 +21,7 @@ bool Havel_Hakimi(vector<int> A,bool z){
             A[n-j]--;
             if(A[n-j]<0) return false;
         }
-        allZero=std::all_of(A.begin(),A.end(),[](int i) { return i==0; });
+        allZero=std::all_of(A.begin(),A.end(),[](int i) { return i==0; });  //To check if all elements are equal to 0
         if(allZero) return true;
         std::sort(A.begin(),A.end());
         if(z) Disp(A,i+1);
