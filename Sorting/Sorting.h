@@ -10,9 +10,9 @@ namespace Quick_SORT{
             do{
                 while(arr[LOW]<arr[index] || arr[LOW]==arr[index]) LOW++;
                 while(arr[HIGH]>arr[index]) HIGH--;
-                if(LOW<HIGH) swap(arr[LOW],arr[HIGH]);
+                if(LOW<HIGH) std::swap(arr[LOW],arr[HIGH]);
             }while(LOW<HIGH);
-            if(index!=HIGH) swap(arr[index],arr[HIGH]);
+            if(index!=HIGH) std::swap(arr[index],arr[HIGH]);
             return HIGH;
         }
         template <class X>
@@ -33,9 +33,9 @@ namespace Quick_SORT{
             do{
                 while(arr[LOW]<arr[index]) LOW--;
                 while(arr[HIGH]>arr[index] || arr[HIGH]==arr[index]) HIGH++;
-                if(LOW>HIGH) swap(arr[LOW],arr[HIGH]);
+                if(LOW>HIGH) std::swap(arr[LOW],arr[HIGH]);
             }while(LOW>HIGH);
-            if(index!=LOW) swap(arr[index],arr[LOW]);
+            if(index!=LOW) std::swap(arr[index],arr[LOW]);
             return LOW;
         }
         template <class X>
