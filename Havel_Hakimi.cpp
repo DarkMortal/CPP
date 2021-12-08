@@ -19,12 +19,18 @@ bool Havel_Hakimi(vector<int> A,bool z){
         if(x>(n-i)) return false;
         for(int j=i+1;j<=x+i;j++){
             A[n-j]--;
-            if(A[n-j]<0) return false;
+            if(A[n-j]<0){
+                if(z) Disp(A,i);
+                return false;
+            }
         }
         allZero=std::all_of(A.begin(),A.end(),[](int i) { return i==0; });  //To check if all elements are equal to 0
-        if(allZero) return true;
+        if(allZero){
+            if(z) Disp(A,i);
+            return true;
+        }
         std::sort(A.begin(),A.end());
-        if(z) Disp(A,i+1);
+        if(z) Disp(A,i);
     } return true;
 }
 int main(){
