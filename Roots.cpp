@@ -36,23 +36,26 @@ int main()
 {
 	int n; char ch;
 	cout<<"Enter number of Roots = "; cin>>n;
-	int arr[n];
-	cout<<"Enter the Roots : ";
-	for(int j=0;j<n;j++) cin>>arr[j];
-	cout<<"Enter variable : "; getchar(); cin>>ch; cout<<ch<<kSuperscripts.at(n);
-	for(int i=1;i<=n;i++){
-        int r=i,sum=0;
-        sumCombination(arr, n, r,sum);
-        if(sum){
-            sum=(i%2==0)?(sum):(sum*(-1));
-            if(sum>0 && sum!=1) cout<<"+"<<sum;
-            else if(sum==-1) cout<<"-";
-            else cout<<sum;
-            if(n!=i){
-                if((n-i)==1) cout<<ch;
-                else cout<<ch<<kSuperscripts.at(n-i);
+	if(n>=10) cout<<"Equations of degree more than 9 are not supported"<<endl;
+	else{
+        int arr[n];
+        cout<<"Enter the Roots : ";
+        for(int j=0;j<n;j++) cin>>arr[j];
+        cout<<"Enter variable : "; getchar(); cin>>ch; cout<<ch<<kSuperscripts.at(n);
+        for(int i=1;i<=n;i++){
+            int r=i,sum=0;
+            sumCombination(arr, n, r,sum);
+            if(sum){
+                sum=(i%2==0)?(sum):(sum*(-1));
+                if(sum>0 && sum!=1) cout<<"+"<<sum;
+                else if(sum==-1) cout<<"-";
+                else if(sum==1) cout<<"+";
+                else cout<<sum;
+                if(n!=i){
+                    if((n-i)==1) cout<<ch;
+                    else cout<<ch<<kSuperscripts.at(n-i);
+                }
             }
-        }
-	}
+    }}
 	cout<<endl; return 0;
 }
