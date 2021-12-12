@@ -6,7 +6,7 @@ static char *super[] = {"\xe2\x81\xb0", "\xc2\xb9", "\xc2\xb2", "\xc2\xb3", "\xe
 
 void combinationUtil(float arr[], float data[],int start, int end,int index, int r,float &elm){
 	if (index == r){
-        int x=1;
+        float x=1.0;
 		for (int j = 0; j < r; j++) x*=data[j];
         elm+=x; return;
 	}
@@ -18,7 +18,7 @@ void combinationUtil(float arr[], float data[],int start, int end,int index, int
 }
 
 void sumCombination(float arr[], int n, int r,float &x){
-	float data[r];
+	float data[r]={0};
 	combinationUtil(arr, data, 0, n-1, 0, r,x);
 }
 
@@ -28,7 +28,7 @@ int main()
 	cout<<"Enter number of Roots = "; cin>>n;
 	if(n>=10) cout<<"Equations of degree more than 9 are not supported"<<endl;
 	else{
-        float arr[n];
+        float arr[n]={0};
         cout<<"Enter the Roots : ";
         for(int j=0;j<n;j++) cin>>arr[j];
         cout<<"Enter variable : "; getchar(); cin>>ch; cout<<ch<<super[n];
