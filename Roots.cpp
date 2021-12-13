@@ -5,17 +5,14 @@ using namespace std;
 static char *super[] = {"\xe2\x81\xb0", "\xc2\xb9", "\xc2\xb2", "\xc2\xb3", "\xe2\x81\xb4", "\xe2\x81\xb5", "\xe2\x81\xb6","\xe2\x81\xb7", "\xe2\x81\xb8", "\xe2\x81\xb9"};
 
 void Disp(int n){
-    int s=0,zeros=0,x=n;
-    while(x){
-        s=10*s+x%10;
-        if(x%10==0) zeros++;
-        x/=10;
+    int a=n;
+    string x="";
+    while(a){
+        x+=char(a%10+48);
+        a/=10;
     }
-    while(s){
-        cout<<super[s%10];
-        s/=10;
-    }
-    for(int i=0;i<zeros;i++) cout<<super[0];
+    reverse(x.begin(),x.end());
+    for(int i=0;i<x.length();i++) cout<<super[x.at(i)-48];
 }
 
 void combinationUtil(float arr[], float data[],int start, int end,int index, int r,float &elm){
