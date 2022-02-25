@@ -8,7 +8,7 @@ struct Vectors{ float x,y,z; } Normal={0,0,0},Light={0,1,-1};	//Light = Directio
 	
 float DotProduct(struct Vectors x1,struct Vectors x2){ return (x1.x*x2.x)+(x1.y*x2.y)+(x1.z*x2.z); }
 
-int k,dist=6,radius=3;	//dist = distance of the odnut from the screen
+int k,dist=6,radius=3;	//dist = distance of the donut from the screen
 int main(){
     float A=0, B=0, i, j, z[1760];	//80*22=1760
     char b[1760];
