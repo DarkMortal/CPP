@@ -21,4 +21,5 @@ int main(){
 	double x=LambertW(5);
 	cout<<"exp(1) = "<<exp(1.0)<<endl;
 	cout<<x<<"*exp("<<x<<") = "<<x*exp(x)<<endl;
+        return 0;
 }
