@@ -18,5 +18,6 @@ double LambertW(double x,int iterations=100){
 
 int main(){
 	double x=LambertW(5);
-	cout<<x*exp(x)<<endl<<exp(1.0)<<endl;
+	cout<<"exp(1) = "<<exp(1.0)<<endl;
+	cout<<x<<"*exp("<<x<<") = "<<x*exp(x)<<endl;
 }
