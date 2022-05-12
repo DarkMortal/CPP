@@ -25,8 +25,6 @@ int main(){
     int k;
     float A=0, B=0,i,x,y,z,z2,Z[rangeX*rangeY],mess;
     x=y=z=0;
-    //A=3.14/6;
-    //Rotation[1][1] = 1;
     char b[rangeX*rangeY]; cout<<"\x1b[2j";
     while(1){
         memset(b,32,1760*sizeof(char));		//fill a block of memory with a particular value. Ascii value of NULL character = 32
@@ -40,22 +38,19 @@ int main(){
 
                 //Setting the rotation Matrix
 
-                Rotation[0][0] = cosB*cosi; Rotation[0][1] = cosB*sini*sinA-sinB*cosA; Rotation[0][2] = sinB*sinA+cosB*sini*sinA;
-                Rotation[1][0] = sinB*cosi; Rotation[1][1] = cosA*cosB+sini*sinA*sinB; Rotation[1][2] = sinB*sini*cosA-cosB*sinA;
-                Rotation[2][0] = -sini; Rotation[2][1] = cosi*sinA; Rotation[2][2] = cosi*cosA;
+                Rotation[0][0] = cosB*cosi; Rotation[0][1] = cosB*sini*sinA-sinB*cosA;
+                Rotation[1][0] = sinB*cosi; Rotation[1][1] = cosA*cosB+sini*sinA*sinB;
+                Rotation[2][0] = -sini; Rotation[2][1] = cosi*sinA;
 
-                //float sini = x*sin(i)*(-1.0);
                 y = Line(x);
-                //y = (y>0?y:0);
-                z2 = x*Rotation[2][0]+y*Rotation[2][1]+z*Rotation[2][2];
+                z2 = x*Rotation[2][0]+y*Rotation[2][1];
                 mess = 1/(dist+z2);
                 Normal.z = z2;
-                int X = 40.0+30.0*mess*(x*Rotation[0][0]+y*Rotation[0][1]+z*Rotation[0][2]),
-                    Y = 5.0+15.0*mess*(x*Rotation[1][0]+y*Rotation[1][1]+z*Rotation[1][2]),
+                int X = 40.0+30.0*mess*(x*Rotation[0][0]+y*Rotation[0][1]),
+                    Y = 6.0+15.0*mess*(x*Rotation[1][0]+y*Rotation[1][1]),
                     O = X+rangeX*Y,
-                    //N = 8.0*(Normal.Normalize()*Light);
-                    N = 3.0*(Normal*Light);
-                if(rangeY>Y&&Y>0 && X>0&&rangeX>X && mess>Z[O]){
+                    N = 3.5*(Normal*Light);
+                if(rangeY>Y&&Y>0 && X>0&&rangeX>X && mess>=Z[O]){
                     Z[O]=mess;
                     b[O]=".,-~:;=!*#$@"[N>0?(N>=11?11:N):0];
                 }
@@ -64,7 +59,7 @@ int main(){
         cout<<"\x1b[d";
         for(k=0; 1761>k; k++)
             cout<<char(k%80?b[k]:10);	//Puts a character on stdout, in our case:- monitor
-        //A+=0.04;	//A = rotation about X-axis
+        //A+=0.02;	//A = rotation about X-axis
         B+= 0.02;	//B = rotation about Z-axis
     }
     return 0;
