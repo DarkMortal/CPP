@@ -4,6 +4,7 @@
   ## [Watch this video about Array decay](https://youtu.be/hsUivWegqYU)
   ## [Sieve of Eratosthenes](https://youtu.be/nDPo9hsDNvU)
   ## [Havel Hakimi Theorem](https://youtu.be/DdCxNvULI-c)
+  ## [Dynamic Programming](https://www.youtube.com/watch?v=oBt53YbR9Kk)
 
    ### 1. Order of passing arguments to a function matters a lot <br>
    We can't pass any non-default parameters after a default parameter in C and C++

@@ -1,6 +1,6 @@
-#include<iostream>
-#include<math.h>
-#include<string.h>
+#include <iostream>
+#include <math.h>
+#include <string.h>
 #include <algorithm>
 using namespace std;
 
