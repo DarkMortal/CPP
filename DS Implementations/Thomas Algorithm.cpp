@@ -20,7 +20,7 @@ int main(){
     double temp = b[0];
 
     for(int i=1;i<n-1;i++){
-        if(den == 0.0) den = arr[k][0];
+        if(den == 0.0) den = arr[i][0];
         temp /= den;
         int diagup = (i == 1)?1:2;
         den = arr[i][1] - arr[i-1][diagup]*arr[i][0]/den;
