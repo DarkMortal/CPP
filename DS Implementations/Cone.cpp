@@ -65,9 +65,24 @@ int main(){
     return 0;
 }
 
+float Q_sqrt(float num){
+    long i;
+    float x2,y;
+    const float threeHalfs = 1.5F;
+
+    x2 = num*0.5F;
+    y = num;
+    i = *(long*)&y;
+    i = 0x5f3759df - (i>>1);
+    y = *(float*)&i;
+    y  = y*(threeHalfs-(x2*y*y)); // 1st iteration
+    y  = y*(threeHalfs-(x2*y*y)); // 2nd iteration
+    return y;
+}
+
 Vector Vector::Normalize(){
-    float s = sqrt(x*x+y*y+z*z);
-    return Vector(x/s,y/s,z/s);
+    float s = Q_sqrt(x*x+y*y+z*z);
+    return Vector(x*s,y*s,z*s);
 }
 
 float Vector::operator*(const Vector& a){
