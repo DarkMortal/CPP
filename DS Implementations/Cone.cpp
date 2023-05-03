@@ -10,19 +10,19 @@ struct Vector{
     Vector(float a,float b,float c):x(a),y(b),z(c){}
     Vector Normalize();
     float operator * (const Vector&);
-} Light(0,1,1), Normal(r,h,0);
+} Light = {0,1,1}, Normal = {r,h,0};
 
-float Line(float x){
-    return (m1*x+h);
-}
+float Line(float x){ return (m1*x+h); }
 
-float Rotation[3][3]=
-{
-    {0,0,0},{0,0,0},{0,0,0}
+float Rotation[3][3] = {
+    {0,0,0},
+    {0,0,0},
+    {0,0,0}
 };
 
 int main(){
     int k;
+    // Normal = Normal.Normalize();
     float A=0, B=0,i,x,y,z,z2,Z[rangeX*rangeY],mess;
     x=y=z=0;
     char b[rangeX*rangeY]; cout<<"\x1b[2j";
@@ -51,16 +51,16 @@ int main(){
                     O = X+rangeX*Y,
                     N = 3.5*(Normal*Light);
                 if(rangeY>Y&&Y>0 && X>0&&rangeX>X && mess>=Z[O]){
-                    Z[O]=mess;
-                    b[O]=".,-~:;=!*#$@"[N>0?(N>=11?11:N):0];
+                    Z[O] = mess;
+                    b[O] = ".,-~:;=!*#$@"[N>0?(N>=11?11:N):0];
                 }
             }
         }
         cout<<"\x1b[d";
         for(k=0; 1761>k; k++)
             cout<<char(k%80?b[k]:10);	//Puts a character on stdout, in our case:- monitor
-        //A+=0.02;	//A = rotation about X-axis
-        B+= 0.02;	//B = rotation about Z-axis
+        //A += 0.02;	//A = rotation about X-axis
+        B += 0.02;	//B = rotation about Z-axis
     }
     return 0;
 }
