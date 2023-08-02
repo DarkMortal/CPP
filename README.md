@@ -23,6 +23,7 @@ void arr(int b,int a=10)
   ## [Lvalues vs Rvalues](https://youtu.be/fbYknr-HPYE)
   ## [Move Semantics in C++](https://youtu.be/ehMg6zvXuMY)
   ## [Smart Pointers](https://youtu.be/UOB7-B2MfwA)
+  ## [KMP Algorithm](https://youtu.be/ziteu2FpYsA)
   ## Unix related stuff
   - ## [YouTube](https://youtu.be/cex9XrZCU14)
   - ## [GitBook](https://octave-1.gitbook.io/c-unix/)
