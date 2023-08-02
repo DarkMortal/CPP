@@ -48,5 +48,5 @@ int main(){
 
 /*Output
 Pattern found at index = 4
-BHARAT is a substring of MAHABHARAT
+BHARAT is a substring of MAHABHARAT KATHA
 */
