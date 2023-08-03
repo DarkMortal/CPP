@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isSubString(char* str, char* pattern, uint16_t stringLength, uint16_t patternLength){
+int isSubString(char* str, char* pattern, uint16_t stringLength, uint16_t patternLength){
     if(patternLength > stringLength) return false;
 
     uint16_t prefixArray[patternLength] = {0}, i = 0, j = 1;
@@ -30,9 +30,7 @@ bool isSubString(char* str, char* pattern, uint16_t stringLength, uint16_t patte
             } foundAt = i;
         }
     }
-    bool isFound = j == patternLength;
-    if(isFound) cout<<"Pattern found at index = "<<foundAt<<endl;
-    return isFound;
+    return (j == patternLength)?foundAt:-1;
 }
 
 int main(){
@@ -40,8 +38,11 @@ int main(){
     char pattern[] = "BHARAT"; //"ABABCABAB";
     uint16_t n1 = sizeof(str)/sizeof(char)-1;
     uint16_t n2 = sizeof(pattern)/sizeof(char)-1;
-    if(isSubString(str, pattern, n1, n2))
+    int index = isSubString(str, pattern, n1, n2);
+    if(index != -1){
+        cout<<"Pattern found at index = "<<index<<endl;
         cout<<pattern<<" is a substring of "<<str<<endl;
+    }
     else cout<<pattern<<" is not a substring of "<<str<<endl;
     return 0;
 }
